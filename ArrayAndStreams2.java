@@ -21,6 +21,7 @@ public class ArrayAndStreams2 {
          System.out.printf("strings less than n sorted descending: %s%n",
                         Arrays.stream(strings)
                          .filter(s -> s.compareToIgnoreCase("n") < 0)
+                                .sorted(String.CASE_INSENSITIVE_ORDER)
                          .collect(Collectors.toList()));
     }
 }
