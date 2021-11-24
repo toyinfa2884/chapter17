@@ -22,9 +22,10 @@ public class InStreamOperations {
         System.out.printf("Product via reduce method: %d%n", IntStream.of(values).reduce((x, y) -> x * y).getAsInt());
         System.out.printf("Sum of squares via map and sum: %d%n%n", IntStream.of(values).map(x -> x * x).sum());
 
-        System.out.printf("Values displayed in sorted order: %s%n", IntStream.of(values)
+        System.out.printf("Values displayed in sorted order: %s%n",
+                    IntStream.of(values)
                     .sorted()
                     .mapToObj(String::valueOf)
-                     .collect(Collectors.joining(" ")));
+                    .collect(Collectors.joining(" ")));
     }
 }
