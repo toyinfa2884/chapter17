@@ -11,7 +11,8 @@ public class ArrayAndStreams2 {
 
         System.out.printf("strings in uppercase: %s%n",
                  Arrays.stream(strings)
-                .collect(Collectors.toList()));
+                         .map(String::toUpperCase)
+                         .collect(Collectors.toList()));
 
         System.out.printf("strings less than n sorted ascending: %s%n",
                  Arrays.stream(strings)
@@ -23,5 +24,12 @@ public class ArrayAndStreams2 {
                          .filter(s -> s.compareToIgnoreCase("n") < 0)
                                 .sorted(String.CASE_INSENSITIVE_ORDER)
                          .collect(Collectors.toList()));
+
+        System.out.printf("strings less than n sorted descending: %s%n",
+                Arrays.stream(strings)
+                        .filter(s -> s.compareToIgnoreCase("n") < 0)
+                        .sorted(String.CASE_INSENSITIVE_ORDER.reversed())
+                        .collect(Collectors.toList()));
+
     }
 }
